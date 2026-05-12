@@ -1,0 +1,26 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+//Frontmatter: (---) Code fences
+//Server Only
+const title = 'Mi curso de astro';
+const name = 'Fawer Vargas';
+
+
+---
+
+<MainLayout title="Home Page">
+	
+	<h1>{name}</h1>
+	<p>Momento Actual: {new Date().toLocaleTimeString()}</p>
+	<p id= "current-time">Momento Actual real: </p>
+
+	<p>Por: {name}</p>
+
+	<script>
+		//Client Only
+		const currentTimeParagraph = document.querySelector('#current-time') as HTMLParagraphElement;
+		
+		currentTimeParagraph.innerText = `Momento Actual real: ${new Date().toLocaleTimeString()}`;
+	</script>
+</MainLayout>
