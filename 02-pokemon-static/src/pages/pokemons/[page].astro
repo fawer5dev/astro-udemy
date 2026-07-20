@@ -17,8 +17,9 @@ import "@styles/global.css";
 ---
 
 <MainLayout title={title}>
-  <h1 class="text-3xl">Welcome to {title}</h1>
-  <hr />
+  <h1 class="hero-title text-5xl sm:text-6xl font-extrabold tracking-tight text-center my-8">
+    Welcome to <span class="title-accent">{title}</span>
+  </h1>
 
   <section
     aria-label="Pokemon List"
@@ -55,6 +56,21 @@ import "@styles/global.css";
 </MainLayout>
 
 <style>
+  .hero-title {
+    background: linear-gradient(135deg, #ffcb05 0%, #ff6f00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .title-accent {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .btn {
     background-color: #56b72d; /* Green */
     border: none;
